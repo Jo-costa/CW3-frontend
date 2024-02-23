@@ -136,7 +136,7 @@ let webstore = new Vue({
 
         reloadPage() {
 
-            windows.location.reload()
+            window.location.reload()
 
         },
 
