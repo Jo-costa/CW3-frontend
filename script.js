@@ -36,7 +36,7 @@ let webstore = new Vue({
             console.error("Service workers are not supported.");
         }
 
-        fetch(`http://localhost:3000/collections/products`)
+        fetch(`https://afterschoolclub.eu-west-2.elasticbeanstalk.com/collections/products`)
             .then(function (response) {
                 response.json().then(
                     function (json) {
@@ -58,7 +58,7 @@ let webstore = new Vue({
     watch: {
         search: function () {
             if (this.search.length > 0) {
-                fetch(`http://localhost:3000/collections/products/search?query=${this.search}`)
+                fetch(`https://afterschoolclub.eu-west-2.elasticbeanstalk.com/collections/products/search?query=${this.search}`)
                     .then(function (response) {
 
                         console.log("response" + JSON.stringify(response));
