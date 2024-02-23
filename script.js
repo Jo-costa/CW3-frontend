@@ -6,7 +6,6 @@ let webstore = new Vue({
         products: null,
         order: {
             firstName: null,
-
             phone: null,
         },
 
@@ -23,15 +22,6 @@ let webstore = new Vue({
 
     created: function () {
 
-        fetch(`https://afterschoolclub.eu-west-2.elasticbeanstalk.com/collections/products`)
-            .then(function (response) {
-                response.json().then(
-                    function (json) {
-                        webstore.products = json
-                    }
-                )
-            })
-
         if ("serviceWorker" in navigator) {
 
             navigator.serviceWorker.register("service-worker.js").then(
@@ -45,6 +35,17 @@ let webstore = new Vue({
         } else {
             console.error("Service workers are not supported.");
         }
+
+        fetch(`http://localhost:3000/collections/products`)
+            .then(function (response) {
+                response.json().then(
+                    function (json) {
+                        webstore.products = json
+                    }
+                )
+            })
+
+
 
 
     },
