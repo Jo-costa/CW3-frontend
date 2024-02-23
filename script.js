@@ -3,7 +3,7 @@ let webstore = new Vue({
     data: {
         sitename: 'After School Club',
         showProduct: true,
-        products: products,
+        products: null,
         order: {
             firstName: null,
 
