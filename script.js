@@ -72,7 +72,6 @@ let webstore = new Vue({
                     })
 
             } else {
-
                 fetch(`https://afterschoolclub.eu-west-2.elasticbeanstalk.com/collections/products`)
                     .then(function (response) {
                         response.json().then(
