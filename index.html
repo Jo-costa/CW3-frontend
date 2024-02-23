@@ -39,6 +39,12 @@
         <main>
             <div class="container" v-if="showProduct">
 
+                
+                    
+                    <a v-bind:href="serverURL">HTTPS TEST</a>
+                    <button @click="deleteAllCaches" style="width: 100px;">Delete All Caches</button>
+                    <button @click="unregister" style="width: 100px;">unregister All ServiceWorkers</button>
+                    <button @click="reloadPage" style="width: 100px;">Reload Page</button>
                 <div class="search-main-container">
                     <div class="search-container">
                         <div class="search">

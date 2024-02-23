@@ -17,6 +17,7 @@ let webstore = new Vue({
         searchResults: [],
         reuslts: "",
         valid: false, //valid if name last name and phone number has been filled
+        serverURL: `https://afterschoolclub.eu-west-2.elasticbeanstalk.com/collections/products`
 
     },
 
@@ -132,6 +133,35 @@ let webstore = new Vue({
 
 
     methods: {
+
+        reloadPage() {
+
+            windows.location.reload()
+
+        },
+
+        unregister() {
+
+            navigator.serviceWorker.getRegistrations().then(function (registrations) {
+                for (let registration of registrations) {
+                    registration.unregister()
+                }
+            })
+
+            console.log("Unregisted");
+
+        },
+
+
+        deleteAllCaches() {
+
+            caches.keys().then(function (names) {
+                for (let name of names) {
+                    caches.delete(name)
+                }
+            })
+            console.log("All caches deleted");
+        },
 
         updateBasketInfo() {
 
