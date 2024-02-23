@@ -35,10 +35,7 @@ let webstore = new Vue({
         } else {
             console.error("Service workers are not supported.");
         }
-    },
 
-
-    created: function () {
         fetch(`https://afterschoolclub.eu-west-2.elasticbeanstalk.com/collections/products`)
             .then(function (response) {
                 response.json().then(
@@ -48,6 +45,11 @@ let webstore = new Vue({
                 )
             })
     },
+
+
+    // created: function () {
+
+    // },
 
     watch: {
         search: function () {
